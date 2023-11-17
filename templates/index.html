@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolhedor de filme da Palloma</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Escolhedor de filme da Palloma</h1>
+    <div class="form-group">
+      <label for="movie-title">Título do Filme:</label>
+      <input type="text" id="movie-title" placeholder="Insira o título do filme aqui">
+    </div>
+    <div class="button-group">
+      <button onclick="addMovie()">Adicionar filme</button>
+      <button onclick="pickRandomMovie()">Escolher Filme Aleatório</button>
+      <button onclick="clearMovieList()">Apagar Lista</button>
+    </div>
+    <ul id="movie-list"></ul>
+  </div>
+
+  <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+
+</body>
+</html>

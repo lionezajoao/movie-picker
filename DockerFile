@@ -1,0 +1,25 @@
+FROM python:3.11
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy the Pipenv files
+COPY Pipfile Pipfile.lock ./
+
+# Install Pipenv
+RUN pip install pipenv
+
+# Install dependencies using Pipenv
+RUN pipenv install
+
+# Copy the rest of the application's code
+COPY . .
+
+# Make port 8000 available to the world outside this container
+EXPOSE 8000
+
+# Define environment variable
+ENV NAME World
+
+# Run the application
+CMD ["pipenv", "run", "python", "./main.py"]
