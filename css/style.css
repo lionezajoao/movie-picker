@@ -64,6 +64,9 @@
     transition: background-color 0.3s ease;
   }
   
+  #msg {
+    text-align: center;
+}
 
   .button-group button:hover {
     background-color: #3949ab;
